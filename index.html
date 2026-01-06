@@ -1,0 +1,284 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pluto Whale Studio - Development Studio Portfolio</title>
+  <style>
+      :root {
+          --bg-color: #ffffff;
+          --text-color: #333333;
+          --card-bg: #f8f9fa;
+          --border-color: #e9ecef;
+          --accent-color: #d84622;
+          --accent-variant-color: #fa9a5b;
+          --header-bg: #ffffff;
+          --shadow: rgba(0, 0, 0, 0.1);
+      }
+
+      @media (prefers-color-scheme: dark) {
+          :root {
+              --bg-color: #121212;
+              --text-color: #e0e0e0;
+              --card-bg: #1e1e1e;
+              --border-color: #333333;
+              --accent-color: #fa9a5b;
+              --accent-variant-color: #d84622;
+              --header-bg: #1e1e1e;
+              --shadow: rgba(255, 255, 255, 0.1);
+          }
+      }
+
+      * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+      }
+
+      body {
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+          background-color: var(--bg-color);
+          color: var(--text-color);
+          line-height: 1.6;
+          transition: background-color 0.3s ease, color 0.3s ease;
+      }
+
+      .container {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 0 20px;
+      }
+
+      header {
+          background-color: var(--header-bg);
+          padding: 20px 0;
+          box-shadow: 0 2px 10px var(--shadow);
+          position: sticky;
+          top: 0;
+          z-index: 100;
+          transition: background-color 0.3s ease;
+      }
+
+      .header-content {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          flex-wrap: wrap;
+      }
+
+      .logo {
+          font-size: 1.5rem;
+          font-weight: bold;
+          color: var(--accent-color);
+      }
+
+      .hero {
+          padding: 80px 0;
+          text-align: center;
+          background: linear-gradient(135deg, var(--accent-color), var(--accent-variant-color));
+          color: white;
+          margin-bottom: 60px;
+      }
+
+      .profile-img {
+          width: 120px;
+          height: 120px;
+          border-radius: 50%;
+          margin: 0 auto 20px;
+          border: 4px solid white;
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      }
+
+      .hero h1 {
+          font-size: 3rem;
+          margin-bottom: 10px;
+          font-weight: 700;
+      }
+
+      .hero p {
+          font-size: 1.2rem;
+          opacity: 0.9;
+          max-width: 600px;
+          margin: 0 auto;
+      }
+
+      .section {
+          margin-bottom: 60px;
+      }
+
+      .section h2 {
+          font-size: 2.5rem;
+          margin-bottom: 30px;
+          text-align: center;
+          color: var(--accent-color);
+      }
+
+      .projects-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+          gap: 30px;
+          margin-top: 40px;
+      }
+
+      .project-card {
+          background-color: var(--card-bg);
+          border-radius: 12px;
+          padding: 30px;
+          box-shadow: 0 4px 20px var(--shadow);
+          transition: all 0.3s ease;
+          border: 1px solid var(--border-color);
+      }
+
+      .project-card:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 8px 30px var(--shadow);
+      }
+
+      .project-card h3 {
+          color: var(--accent-color);
+          margin-bottom: 15px;
+          font-size: 1.4rem;
+      }
+
+      .project-card p {
+          margin-bottom: 20px;
+          color: var(--text-color);
+          opacity: 0.8;
+      }
+
+      .project-links {
+          display: flex;
+          gap: 15px;
+      }
+
+      .project-links a {
+          color: var(--accent-color);
+          text-decoration: none;
+          font-weight: 500;
+          padding: 8px 16px;
+          border: 2px solid var(--accent-color);
+          border-radius: 6px;
+          transition: all 0.3s ease;
+      }
+
+      .project-links a:hover {
+          background-color: var(--accent-color);
+          color: white;
+      }
+
+      .footer {
+          background-color: var(--card-bg);
+          padding: 40px 0;
+          margin-top: 80px;
+          border-top: 1px solid var(--border-color);
+      }
+
+      .impressum {
+          max-width: 800px;
+          margin: 0 auto;
+          text-align: center;
+      }
+
+      .impressum h3 {
+          color: var(--accent-color);
+          margin-bottom: 20px;
+          font-size: 1.8rem;
+      }
+
+      .impressum p {
+          margin-bottom: 15px;
+          line-height: 1.8;
+      }
+
+      @media (max-width: 768px) {
+          .hero h1 {
+              font-size: 2rem;
+          }
+
+          .hero p {
+              font-size: 1rem;
+          }
+
+          .section h2 {
+              font-size: 2rem;
+          }
+
+          .projects-grid {
+              grid-template-columns: 1fr;
+          }
+
+          .header-content {
+              flex-direction: column;
+              gap: 15px;
+          }
+      }
+  </style>
+</head>
+<body>
+<header>
+  <div class="container">
+    <div class="header-content">
+      <div class="logo">Pluto Whale Studio</div>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <img src="https://github.com/pluto-whale-studio.png" alt="Pluto Whale Profile Picture" class="profile-img">
+    <h1>Hello, we are Pluto Whale Studio</h1>
+    <p>Games • Websites • Apps</p>
+  </div>
+</section>
+
+<main class="container">
+  <section class="section">
+    <h2>My Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <h3>repeating-wheel-picker</h3>
+        <p>A component for React Native applications. Provides a wheel picker with repeating data so that the user can
+          seemingly scroll infinitely.</p>
+        <div class="project-links">
+          <a href="https://pluto-whale-studio.github.io/repeating-wheel-picker/" target="_blank">Docs</a>
+          <a href="https://www.npmjs.com/package/@pluto-whale-studio/repeating-wheel-picker" target="_blank">npmjs</a>
+          <a href="https://github.com/pluto-whale-studio/repeating-wheel-picker" target="_blank">GitHub</a>
+        </div>
+      </div>
+      <div class="project-card">
+        <h3>time-picker</h3>
+        <p>A component for React Native applications. Provides a time picker based on @pluto-whale-studio/repeating-wheel-picker.</p>
+        <div class="project-links">
+          <a href="https://pluto-whale-studio.github.io/time-picker/" target="_blank">Docs</a>
+          <a href="https://www.npmjs.com/package/@pluto-whale-studio/time-picker" target="_blank">npmjs</a>
+          <a href="https://github.com/pluto-whale-studio/time-picker" target="_blank">GitHub</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="impressum">
+      <h3 id="imprint">Impressum / Imprint</h3>
+      <p><strong>Angaben gemäß § 5 DDG:</strong></p>
+      <p>
+        Amrei Plaga<br>
+        c/o Impressumservice Dein-Impressum<br>
+        Stettiner Straße 41<br>
+        35410 Hungen<br>
+        Germany<br><br>
+
+        Email: amabeth.dev@gmail.com<br>
+        Phone: 06183 8039368
+      </p>
+      <p style="margin-top: 30px; font-size: 0.9rem; opacity: 0.7;">
+        © <script>document.write(/\d{4}/.exec(Date())[0])</script>. Built with ❤️ and hosted on GitHub Pages.
+      </p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
